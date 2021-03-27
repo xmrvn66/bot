@@ -1,3 +1,12 @@
+from pyautogui import *  # Importiere Libraries die man braucht
+import pyautogui
+import time
+import keyboard
+import numpy as np
+import random
+import win32api
+import win32con
+
 # Voraussetzungen: Home Screen | Full Sreeen 1920x1080
 
 # # check for Play button shwon and
@@ -14,3 +23,62 @@
 # # Map loaded after ~ 2.97s 
 # -> check if Map is loaded [ monkey_madows_map] or time.sleep(4) 
 # -> if map loaded or slept 4 seconds play script "botproject.py"
+
+def navToMap(homescreen):
+    
+    playClicked = False
+    mapClicked = False
+    diffClicked = False
+    gamemodeClicked = False
+
+    print("checking for play button")
+    time.sleep(1)
+
+    while keyboard.is_pressed('ü') == False:
+    # check if play button appeared
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\playbutton_lobby_homescreen.png', grayscale=False, confidence=0.9) != None and homescreen is True:
+                print("Play Button Found")
+                time.sleep(1)
+                print("Clicking on Play Button")
+                # click on "Play Button"
+                click(827, 927)
+                playClicked = True
+                time.sleep(0.7)
+
+    # check for Monkey Madows Map
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\monkey_madows_selectscreen.png', grayscale=False, confidence=0.9) != None and playClicked is True:
+                print("Monkey Madows Map Found")
+                time.sleep(1)
+                print("Choosing Map")
+                # click on Monkey Madows Map
+                click(532, 261)
+                mapClicked = True
+                time.sleep(0.7)
+    
+        # check for Difficulty
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\easydiff.png', grayscale=False, confidence=0.9) != None and mapClicked is True:
+                print("Difficulties Found")
+                time.sleep(1)
+                print("Selecting Easy Difficulty")
+                # click on Monkey Madows Map
+                click(622, 417)
+                diffClicked = True
+                time.sleep(0.7)
+    
+            # check for Gamemode
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\standard_gamemode.png', grayscale=False, confidence=0.9) != None and diffClicked is True:
+                print("Gamemode Found")
+                time.sleep(1)
+                print("Selecting Standard Gamemode")
+                # click on Monkey Madows Map
+                click(630, 573)
+                gamemodeClicked = True
+                time.sleep(0.7)
+                break
+    
+
+    else: 
+        print("Returning to Home Screen stopped")
+
+    # Home menu opens up - return restartgame = true
+    return gamemodeClicked

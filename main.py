@@ -2,7 +2,9 @@
 from botproject import run as playgame 
 # Importiere die Funktion navHome() und führt navHome() in restartgame.py aus 
 from restartgame import navHome
-# from navigatemenu import run as menu_run
+# Importiere navToMap() to choose map aus navigatemenue.py
+from navigatemenue import navToMap
+
 import time
 
 print("Main starting")
@@ -15,13 +17,10 @@ print(game_won)
 
 time.sleep(1.5)
 
-print("Importing navHome")
-
-game_won = True
-
 print("Imported navHome")
 time.sleep(0.2)
 
+# wenn game gewonnen, dann gehe zum Homescreen
 if game_won is True: 
     print("Navigating home")
     # Turns to True if restartgame.py runs through and game navigates to homescreen
@@ -30,10 +29,18 @@ if game_won is True:
 
 time.sleep(1.5)
 
+# wenn im homescreen, dann öffne Map im richtigen Schwierigkeitsgrad
+if homescreen is True: 
+    print("Opening up new Game")
+    # s.o.
+    gameStarted = navToMap(homescreen)
+
+time.sleep(1.5)
 
 # format string -> meint das game_won und gibt neben dem String auch den Wert der Variablen in einer Zeile aus
 print(f"game_won is: {game_won}")
 print(f"homescreen is: {homescreen}")
+print(f'gamemodeClicked is: {gamemodeClicked}')
 print("Main durchgelaufen - Skript vorbei")
 
 
