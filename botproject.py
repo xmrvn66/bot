@@ -7,6 +7,7 @@ import random
 import win32api
 import win32con
 from levelup import checkLvlUp
+from checkMap import checkForMap
 
 def run():
     """ Skript, welches Spiel spielt."""
@@ -20,6 +21,9 @@ def run():
         time.sleep(np.random.uniform(0.1,0.3))  # hold button for 0.1 - 0.3s 
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0, 0)  # release left click
 
+    # check if Map is loaded
+    mapLoaded = checkForMap()
+    
     #########################################################################################################################
     #               Placing Ninja                                                                                           #
     #########################################################################################################################
@@ -30,7 +34,7 @@ def run():
     ninja301 = False
     ninja401 = False
 
-    if ninja401 == False:
+    if ninja401 == False and mapLoaded is True:
         print("Starting by placing Ninja")
         # Selecting Unit
         pyautogui.keyDown('D')  # Drücke "D" um einen Ninja auszuwählen

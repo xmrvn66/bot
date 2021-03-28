@@ -5,3 +5,4 @@
 # randomize every delay
 # randomize unnötige klicks -> Bspw. levelup.py (klicke irgendwo in Bereich zwischen x= 1000 - 1200 und Y = 900 - 950)
 # https://stackoverflow.com/questions/51825908/game-counter-in-python
+# if game /window with title "Bloons TD6" is not in Foreground, stop bot

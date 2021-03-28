@@ -9,8 +9,10 @@ import keyboard
 
 # Welcome message
 print("Open up the Game with the following settings:")
-print("1920x1080 | Fullscreen | Monkey Meadow - Standard | Difficulty : Easy | Autoplay ON")
+print("1920x1080 | Fullscreen | Autoplay ON")
+print("Start at Home Screen")
 print("To stop the bot hold 'Ü'- DON'T MOVE YOUR Mouse")
+print("Keep in Foreground")
 
 # Delay, damit man in das Game tabben kann
 print("Bot is starting in 3")
@@ -19,6 +21,10 @@ print("Bot is starting in 2")
 time.sleep(1)
 print("Bot is starting in 1")
 time.sleep(1)
+
+# Navigate to Map
+print("Navigating to Map")
+navToMap()
 
 while keyboard.is_pressed('ü') == False:
     print("Starting New Game")
