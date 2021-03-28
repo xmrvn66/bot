@@ -25,7 +25,8 @@ import win32con
 # -> if map loaded or slept 4 seconds play script "botproject.py"
 
 def navToMap(homescreen):
-    
+    """Skript, welches neues Spiel startet vom Homescreen aus."""
+
     playClicked = False
     mapClicked = False
     diffClicked = False
@@ -78,7 +79,7 @@ def navToMap(homescreen):
     
 
     else: 
-        print("Returning to Home Screen stopped")
+        print("Starting New Game stopped")
 
     # Home menu opens up - return restartgame = true
     return gamemodeClicked

@@ -22,7 +22,8 @@ import win32con
 
 # game_won als Parameter muss in die Klammern, damit der Parameter mitgegeben wird
 def navHome(game_won):
-    
+    """Skript, welches Spiel beendet und zum Homescreen navigiert"""
+
     victoryClicked = False
     homeClicked = False
 

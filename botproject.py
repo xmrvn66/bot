@@ -6,9 +6,10 @@ import numpy as np
 import random
 import win32api
 import win32con
+from levelup import checkLvlUp
 
 def run():
-    """ Skript zum botten meines Spiels."""
+    """ Skript, welches Spiel spielt."""
 
     # Welcome message
     print("Open up the Game with the following settings:")
@@ -72,7 +73,7 @@ def run():
         click(632, 505)  # navigate to and click ninja
 
         while keyboard.is_pressed('ü') is False:
-
+            checkLvlUp()
             # check if the Ü key is being pressed to Stop Bot
             # Checks if ü key is pressed, if it is, it will stop the script, else it will let the while loop run
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade100.png', grayscale=False, confidence=0.9) != None:
@@ -142,13 +143,13 @@ def run():
 
     if ninja401 == True and sniperAvail == False:
         while keyboard.is_pressed('ü') == False:
+            checkLvlUp()
             print("Checking if Sniper is ready for purchase")
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniperAvail.png', grayscale=False, confidence=0.9) != None:
+                print("Sniper available for purchase")
                 sniperAvail = True
-                if sniperAvail == True:
-                    print("Sniper available for purchase")
-                    break
-            time.sleep(1)
+                break
+            time.sleep(1.5)
         else:
             print("Bot stopped :(")
 
@@ -181,6 +182,7 @@ def run():
         click(721, 545)
 
         while keyboard.is_pressed('ü') == False:
+            checkLvlUp()
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniper100.png', grayscale=False, confidence=0.9) != None:
                 # check if Sniper upgrade 1-0-0 is available
                 click(1498, 478)
@@ -235,14 +237,14 @@ def run():
 
     if sniper310 == True and canonAvail == False:
         while keyboard.is_pressed('ü') == False:
-            print("Checking if Canon is available for purchase")
+            checkLvlUp()
+            print("Checking if Cannon is available for purchase")
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canonAvail.png', grayscale=False, confidence=0.9) != None:
-                # check if Sniper is available to buy
+                # check if Cannon is available to buy
+                print("Cannon available for purchase")
                 canonAvail = True
-                if canonAvail == True:
-                    print("Canon available for purchase")
-                    break
-            time.sleep(1)
+                break
+            time.sleep(1.5)
         else:
             print("Bot stopped :(")
 
@@ -278,6 +280,8 @@ def run():
         click(434, 730)
 
         while keyboard.is_pressed('ü') == False:
+            checkLvlUp()
+
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon010.png', grayscale=False, confidence=0.9) != None:
                 click(1561, 636)
                 canon010 = True
@@ -285,7 +289,7 @@ def run():
                     print("Bomb Shooter upgraded to 0-1-0")
             time.sleep(0.2)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon020.png', grayscale=False, confidence=0.9) != None and sniper100 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon020.png', grayscale=False, confidence=0.9) != None and canon010 == True:
                 click(1561, 636)
                 canon020 = True
                 if canon020 == True:
@@ -293,28 +297,28 @@ def run():
 
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon030.png', grayscale=False, confidence=0.9) != None and sniper110 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon030.png', grayscale=False, confidence=0.9) != None and canon020 == True:
                 click(1561, 636)
                 canon030 = True
                 if canon030 == True:
                     print("Bomb Shooter upgraded to 0-3-0")
             time.sleep(0.3)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon130.png', grayscale=False, confidence=0.9) != None and sniper210 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon130.png', grayscale=False, confidence=0.9) != None and canon030 == True:
                 click(1498, 478)
                 canon130 = True
                 if canon130 == True:
                     print("Bomb Shooter upgraded to 1-3-0")
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon230.png', grayscale=False, confidence=0.9) != None and sniper210 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon230.png', grayscale=False, confidence=0.9) != None and canon130 == True:
                 click(1498, 478)
                 canon230 = True
                 if canon230 == True:
                     print("Bomb Shooter upgraded to 2-3-0")
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon240.png', grayscale=False, confidence=0.9) != None and sniper210 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon240.png', grayscale=False, confidence=0.9) != None and canon230 == True:
                 click(1561, 636)
                 canon240 = True
                 if canon240 == True:
@@ -337,18 +341,15 @@ def run():
 
     # Game Won Message
     if canon240 == True:
+        print("Waiting for Game to finish")
         while keyboard.is_pressed('ü') == False:
             # check if victory sign appears -> if it does, print and set game_finished to true
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\gamewon.png', grayscale=False, confidence=0.9) != None:
                 print("Game is won ... GG")
-                time.sleep(1)
+                time.sleep(0.2)
                 print("Exiting Game")
                 game_finished = True
                 break
-            time.sleep(3)
+            time.sleep(1)
     
     return game_finished
-
-    # To do: 
-    # - detect if game is won
-    # - if won start restartgame.py
