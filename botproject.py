@@ -11,21 +11,7 @@ from levelup import checkLvlUp
 def run():
     """ Skript, welches Spiel spielt."""
 
-    # Welcome message
-    print("Open up the Game with the following settings:")
-    print("1920x1080 | Fullscreen | Monkey Meadow - Standard | Difficulty : Easy | Autoplay ON")
-    print("To stop the bot hold 'Ü'- DON'T MOVE YOUR Mouse")
-
-    # Delay, damit man in das Game tabben kann
-    print("Bot is starting in 3")
-    time.sleep(1)
-    print("Bot is starting in 2")
-    time.sleep(1)
-    print("Bot is starting in 1")
-    time.sleep(1)
-    print("Bot started :)")
-
-    # Click Function -> Kann dann immer gecalled werden, wenn man irgendwo clicken will
+        # Click Function -> Kann dann immer gecalled werden, wenn man irgendwo clicken will
     def click(x, y):
         win32api.SetCursorPos((x, y))  # set cursor position
         # warte zufällig zwischen 0.1s und 0.3s (sonst kommt Spiel nicht klar)
@@ -140,7 +126,7 @@ def run():
                 time.sleep(0.5)  # Taste "ESC" wieder loslassen
                 break
         else:
-            print("Bot stopped :(")
+            print("Bot is stopping - Keep holding Ü")
 
     #########################################################################################################################
     #               Intermission                                                                                            #
@@ -159,7 +145,7 @@ def run():
                 break
             time.sleep(1.5)
         else:
-            print("Bot stopped :(")
+            print("Bot is stopping - Keep holding Ü")
 
     #########################################################################################################################
     #               Placing Sniper                                                                                          #
@@ -242,7 +228,7 @@ def run():
                 time.sleep(0.4)
                 break
         else:
-            print("Bot stopped :(")
+            print("Bot is stopping - Keep holding Ü")
 
 
     #########################################################################################################################
@@ -262,7 +248,7 @@ def run():
                 break
             time.sleep(1.5)
         else:
-            print("Bot stopped :(")
+            print("Bot is stopping - Keep holding Ü")
 
     #########################################################################################################################
     #               Placing Canon                                                                                           #
@@ -302,7 +288,7 @@ def run():
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeCannon.png', grayscale=False,confidence=0.9) is None:
                 print("Cannon Upgrade UI NOT found - opening now")
                 time.sleep(0.3)
-                click(721, 545)
+                click(434, 730)
                 time.sleep(0.2)
 
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon010.png', grayscale=False, confidence=0.9) != None:
@@ -358,7 +344,7 @@ def run():
                 break
 
         else:
-            print("Bot stopped :(")
+            print("Bot is stopping - Keep holding Ü")
 
     game_finished = False
 
@@ -374,5 +360,7 @@ def run():
                 game_finished = True
                 break
             time.sleep(1)
+        else:
+            print("Bot is stopping - Keep holding Ü")
     
     return game_finished

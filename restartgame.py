@@ -22,10 +22,14 @@ import win32con
 
 # game_won als Parameter muss in die Klammern, damit der Parameter mitgegeben wird
 def navHome(game_won):
-    """Skript, welches Spiel beendet und zum Homescreen navigiert"""
+    """Skript, welches Spiel neustartet"""
 
     victoryClicked = False
-    homeClicked = False
+    freeplayClicked = False
+    settingsClicked = False
+    okayClicked = False
+    restartClicked = False
+    confirmationClicked = False
 
     print("checking for victory image")
     time.sleep(1)
@@ -34,29 +38,67 @@ def navHome(game_won):
     # check if victory image appeared
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\gamewon.png', grayscale=False, confidence=0.9) != None and game_won is True:
                 print("Victory Found")
-                time.sleep(1)
+                time.sleep(0.35)
                 print("Clicking on Next")
                 # click on "next Button"
                 click(967, 901)
                 victoryClicked = True
-                time.sleep(0.7)
+                time.sleep(0.35)
 
-
-    # check for Home Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\home.png', grayscale=False, confidence=0.9) != None and victoryClicked is True:
-                print("Home Button Found")
-                time.sleep(1)
-                print("Clicking on Home")
+    # check for Freeplay Button
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\freeplaybutton.png', grayscale=False, confidence=0.9) != None and victoryClicked is True:
+                print("Freeplay Button Found")
+                time.sleep(0.35)
+                print("Clicking on Freeplay")
                 # click on Home
-                click(792, 846)
-                homeClicked = True
-                time.sleep(0.7)
+                click(1116, 837)
+                freeplayClicked = True
+                time.sleep(0.35)
+
+                # check for Okay Button
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\okaybutton.png', grayscale=False, confidence=0.9) != None and freeplayClicked is True:
+                print("Okay Button Found")
+                time.sleep(0.35)
+                print("Clicking on Okay")
+                # click on Home
+                click(945, 758)
+                okayClicked = True
+                time.sleep(0.35)
+
+                # check for Settings Button
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\settings.png', grayscale=False, confidence=0.9) != None and okayClicked is True:
+                print("Settings Found")
+                time.sleep(0.35)
+                print("Opening Settings")
+                # click on Home
+                click(1595, 33)
+                settingsClicked = True
+                time.sleep(0.35)
+
+                # check for Restart Button
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\restartbutton.png', grayscale=False, confidence=0.9) != None and settingsClicked is True:
+                print("Restart Button Found")
+                time.sleep(0.35)
+                print("Restarting")
+                # click on Restart
+                click(1089, 836)
+                restartClicked = True
+                time.sleep(0.35)
+
+                # check for Restart Confirmation Button
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\confirmrestart.png', grayscale=False, confidence=0.9) != None and restartClicked is True:
+                print("Confirming ...")
+                time.sleep(0.35)
+                # click on RestartConfirmation
+                click(1134, 716)
+                confirmationClicked = True
+                time.sleep(0.35)
                 break
     
     else: 
-        print("Returning to Home Screen stopped")
+        print("Bot is stopping - Keep holding Ü")
 
     # Home menu opens up - return restartgame = true
-    return homeClicked
+    return confirmationClicked
 
                 
