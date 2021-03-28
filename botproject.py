@@ -45,7 +45,7 @@ def run():
     ninja401 = False
 
     if ninja401 == False:
-        print("Starting by placing 1x Ninja")
+        print("Starting by placing Ninja")
         # Selecting Unit
         pyautogui.keyDown('D')  # Drücke "D" um einen Ninja auszuwählen
         time.sleep(0.1)
@@ -74,6 +74,14 @@ def run():
 
         while keyboard.is_pressed('ü') is False:
             checkLvlUp()
+            
+            # check if upgrade Interface is up for Ninja
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeNinja.png', grayscale=False,confidence=0.9) is None:
+                print("Ninja Upgrade UI NOT found - opening now")
+                time.sleep(0.3)
+                click(632, 505)
+                time.sleep(0.2)
+
             # check if the Ü key is being pressed to Stop Bot
             # Checks if ü key is pressed, if it is, it will stop the script, else it will let the while loop run
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade100.png', grayscale=False, confidence=0.9) != None:
@@ -183,6 +191,14 @@ def run():
 
         while keyboard.is_pressed('ü') == False:
             checkLvlUp()
+
+            # check if upgrade Interface is up for Sniper
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeSniper.png', grayscale=False,confidence=0.9) is None:
+                print("Sniper Upgrade UI NOT found - opening now")
+                time.sleep(0.3)
+                click(721, 545)
+                time.sleep(0.2)
+
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniper100.png', grayscale=False, confidence=0.9) != None:
                 # check if Sniper upgrade 1-0-0 is available
                 click(1498, 478)
@@ -281,6 +297,13 @@ def run():
 
         while keyboard.is_pressed('ü') == False:
             checkLvlUp()
+
+            # check if upgrade Interface is up for Sniper
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeCannon.png', grayscale=False,confidence=0.9) is None:
+                print("Cannon Upgrade UI NOT found - opening now")
+                time.sleep(0.3)
+                click(721, 545)
+                time.sleep(0.2)
 
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon010.png', grayscale=False, confidence=0.9) != None:
                 click(1561, 636)

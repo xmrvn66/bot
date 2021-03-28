@@ -10,8 +10,9 @@ import win32con
 def checkLvlUp():
     """Checking for Level Up and Knowledge Point"""
 
-    print("Checking for LevelUP")
+    # print("Checking for LevelUP")
     levelUp = False
+    knowledgePoint = False
 
     if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\levelup.png', grayscale=False, confidence=0.9) != None:
                 # check if level up occured
@@ -32,3 +33,10 @@ def checkLvlUp():
                 print("Continuing in 2")
                 time.sleep(1)
                 print("Continuing in 1")
+                knowledgePoint = True
+    if knowledgePoint and levelUp is True:
+                # Start Game and fast forward
+                print("Starting Game")
+                click(1827, 999)
+                time.sleep(0.1)
+                click(1827, 999)
