@@ -22,7 +22,7 @@ from functions import *
 # start navigatemenue.py
 
 # game_won als Parameter muss in die Klammern, damit der Parameter mitgegeben wird
-def navHome(game_won):
+def restartGame(game_won):
     """Skript, welches Spiel neustartet"""
 
     victoryClicked = False
@@ -30,7 +30,7 @@ def navHome(game_won):
     settingsClicked = False
     okayClicked = False
     restartClicked = False
-    confirmationClicked = False
+    gameRestarted = False
 
     print("checking for victory image")
     time.sleep(1)
@@ -49,37 +49,37 @@ def navHome(game_won):
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\freeplaybutton.png', grayscale=False, confidence=0.9) != None and victoryClicked is True:
                 time.sleep(0.35)
                 print("Clicking on Freeplay")
-                # click on Home
+                # click on Freeplay
                 click(1116, 837)
                 freeplayClicked = True
-                time.sleep(0.35)
+                time.sleep(0.5)
 
                 # check for Okay Button
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\okaybutton.png', grayscale=False, confidence=0.9) != None and freeplayClicked is True:
                 time.sleep(0.35)
                 print("Clicking on Okay")
-                # click on Home
+                # click on Okay
                 click(945, 758)
                 okayClicked = True
-                time.sleep(0.35)
+                time.sleep(0.5)
 
                 # check for Settings Button
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\settings.png', grayscale=False, confidence=0.9) != None and okayClicked is True:
                 time.sleep(0.35)
                 print("Opening Settings")
-                # click on Home
+                # click on Settings
                 click(1595, 33)
                 settingsClicked = True
-                time.sleep(0.35)
+                time.sleep(0.5)
 
                 # check for Restart Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\restartbutton.png', grayscale=False, confidence=0.9) != None and settingsClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\restartbutton.png', grayscale=False, confidence=0.7) != None and settingsClicked is True:
                 time.sleep(0.35)
                 print("Restarting")
                 # click on Restart
                 click(1089, 836)
                 restartClicked = True
-                time.sleep(0.35)
+                time.sleep(0.5)
 
                 # check for Restart Confirmation Button
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\confirmrestart.png', grayscale=False, confidence=0.9) != None and restartClicked is True:
@@ -87,7 +87,7 @@ def navHome(game_won):
                 time.sleep(0.35)
                 # click on RestartConfirmation
                 click(1134, 716)
-                confirmationClicked = True
+                gameRestarted = True
                 time.sleep(0.35)
                 break
     
@@ -95,6 +95,6 @@ def navHome(game_won):
         print("Bot is stopping - Keep holding Ü")
 
     # Home menu opens up - return restartgame = true
-    return confirmationClicked
+    return gameRestarted
 
                 

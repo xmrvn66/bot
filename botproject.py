@@ -79,7 +79,6 @@ def run():
                 ninja200 = True
                 if ninja200 == True:
                     print("Ninja upgraded to 2-0-0")
-
             time.sleep(0.1)
 
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade201.png', grayscale=False, confidence=0.9) != None and ninja200 == True:
@@ -89,7 +88,7 @@ def run():
                 ninja201 = True
                 if ninja201 == True:
                     print("Ninja upgraded to 2-0-1")
-            time.sleep(0.3)
+            time.sleep(0.1)
 
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade301.png', grayscale=False, confidence=0.9) != None and ninja201 == True:
                 # check if Ninja upgrade 2-0-1 is available
@@ -128,18 +127,8 @@ def run():
     # check if Sniper is available to buy
 
     sniperAvail = False
-
-    if ninja401 == True and sniperAvail == False:
-        while keyboard.is_pressed('ü') == False:
-            checkLvlUp()
-            print("Checking if Sniper is ready for purchase")
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\sniperAvail.png', grayscale=False, confidence=0.9) != None:
-                print("Sniper available for purchase")
-                sniperAvail = True
-                break
-            time.sleep(1.5)
-        else:
-            print("Bot is stopping - Keep holding Ü")
+    if ninja401 is True:
+        sniperAvail = checkAvailability("sniper", "sniperAvail.png")    
 
     #########################################################################################################################
     #               Placing Sniper                                                                                          #
@@ -230,19 +219,8 @@ def run():
     #########################################################################################################################
 
     canonAvail = False
-
-    if sniper310 == True and canonAvail == False:
-        while keyboard.is_pressed('ü') == False:
-            checkLvlUp()
-            print("Checking if Cannon is available for purchase")
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canonAvail.png', grayscale=False, confidence=0.9) != None:
-                # check if Cannon is available to buy
-                print("Cannon available for purchase")
-                canonAvail = True
-                break
-            time.sleep(1.5)
-        else:
-            print("Bot is stopping - Keep holding Ü")
+    if sniper310 is True: 
+        canonAvail = checkAvailability("cannon", "canonAvail.png")  
 
     #########################################################################################################################
     #               Placing Canon                                                                                           #

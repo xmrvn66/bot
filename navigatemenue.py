@@ -78,4 +78,4 @@ def navToMap():
         print("Starting New Game stopped")
 
     # Home menu opens up - return restartgame = true
-    return gamemodeClicked
+    # return gamemodeClicked
