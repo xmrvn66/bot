@@ -11,7 +11,7 @@ def checkForMap():
     """Checking if Map is loaded"""
 
     # print("Checking for Map")    
-    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\monkey_madows_map.png', grayscale=False, confidence=0.9) != None:
+    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\monkey_madows_map.png', grayscale=False, confidence=0.9) != None:
         mapLoaded = True
         print("Map is loaded")
         time.sleep(1)

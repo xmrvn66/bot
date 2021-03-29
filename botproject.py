@@ -66,7 +66,7 @@ def run():
             checkLvlUp()
             
             # check if upgrade Interface is up for Ninja
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeNinja.png', grayscale=False,confidence=0.9) is None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\UpgradeNinja.png', grayscale=False,confidence=0.9) is None:
                 print("Ninja Upgrade UI NOT found - opening now")
                 time.sleep(0.3)
                 click(632, 505)
@@ -74,7 +74,7 @@ def run():
 
             # check if the Ü key is being pressed to Stop Bot
             # Checks if ü key is pressed, if it is, it will stop the script, else it will let the while loop run
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade100.png', grayscale=False, confidence=0.9) != None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade100.png', grayscale=False, confidence=0.9) != None:
                 # check if Ninja upgrade 1-0-0 is available
                 # click on upgrade
                 click(1498, 478)
@@ -82,7 +82,7 @@ def run():
                 if ninja100 == True:
                     print("Ninja upgraded to 1-0-0")
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade200.png', grayscale=False, confidence=0.9) != None and ninja100 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade200.png', grayscale=False, confidence=0.9) != None and ninja100 == True:
                 # check if Ninja upgrade 2-0-0 is available
                 # click on upgrade
                 click(1498, 478)
@@ -92,7 +92,7 @@ def run():
 
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade201.png', grayscale=False, confidence=0.9) != None and ninja200 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade201.png', grayscale=False, confidence=0.9) != None and ninja200 == True:
                 # check if Ninja upgrade 2-0-1 is available
                 # click on upgrade
                 click(1518, 778)
@@ -101,7 +101,7 @@ def run():
                     print("Ninja upgraded to 2-0-1")
             time.sleep(0.3)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade301.png', grayscale=False, confidence=0.9) != None and ninja201 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade301.png', grayscale=False, confidence=0.9) != None and ninja201 == True:
                 # check if Ninja upgrade 2-0-1 is available
                 # click on upgrade
                 click(1498, 478)
@@ -110,7 +110,7 @@ def run():
                     print("Ninja upgraded to 3-0-1")
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\ninjaupgrade401.png', grayscale=False, confidence=0.9) != None and ninja301 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\ninjaupgrade401.png', grayscale=False, confidence=0.9) != None and ninja301 == True:
                 # check if Ninja upgrade 2-0-1 is available
                 # click on upgrade
                 click(1498, 478)
@@ -143,7 +143,7 @@ def run():
         while keyboard.is_pressed('ü') == False:
             checkLvlUp()
             print("Checking if Sniper is ready for purchase")
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniperAvail.png', grayscale=False, confidence=0.9) != None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\sniperAvail.png', grayscale=False, confidence=0.9) != None:
                 print("Sniper available for purchase")
                 sniperAvail = True
                 break
@@ -183,13 +183,13 @@ def run():
             checkLvlUp()
 
             # check if upgrade Interface is up for Sniper
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeSniper.png', grayscale=False,confidence=0.9) is None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\UpgradeSniper.png', grayscale=False,confidence=0.9) is None:
                 print("Sniper Upgrade UI NOT found - opening now")
                 time.sleep(0.3)
                 click(721, 545)
                 time.sleep(0.2)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniper100.png', grayscale=False, confidence=0.9) != None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\sniper100.png', grayscale=False, confidence=0.9) != None:
                 # check if Sniper upgrade 1-0-0 is available
                 click(1498, 478)
                 sniper100 = True
@@ -197,7 +197,7 @@ def run():
                     print("Sniper upgraded to 1-0-0")
             time.sleep(0.2)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniper110.png', grayscale=False, confidence=0.9) != None and sniper100 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\sniper110.png', grayscale=False, confidence=0.9) != None and sniper100 == True:
                 # check if Sniper upgrade 1-1-0 is available
                 click(1561, 636)
                 sniper110 = True
@@ -206,7 +206,7 @@ def run():
 
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniper210.png', grayscale=False, confidence=0.9) != None and sniper110 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\sniper210.png', grayscale=False, confidence=0.9) != None and sniper110 == True:
                 # check if Sniper upgrade 2-1-0 is available
                 click(1498, 478)
                 sniper210 = True
@@ -214,7 +214,7 @@ def run():
                     print("Sniper upgraded to 2-1-0")
             time.sleep(0.3)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\sniper310.png', grayscale=False, confidence=0.9) != None and sniper210 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\sniper310.png', grayscale=False, confidence=0.9) != None and sniper210 == True:
                 # check if Sniper upgrade 3-1-0 is available
                 click(1498, 478)
                 sniper310 = True
@@ -245,7 +245,7 @@ def run():
         while keyboard.is_pressed('ü') == False:
             checkLvlUp()
             print("Checking if Cannon is available for purchase")
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canonAvail.png', grayscale=False, confidence=0.9) != None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canonAvail.png', grayscale=False, confidence=0.9) != None:
                 # check if Cannon is available to buy
                 print("Cannon available for purchase")
                 canonAvail = True
@@ -289,20 +289,20 @@ def run():
             checkLvlUp()
 
             # check if upgrade Interface is up for Sniper
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\UpgradeCannon.png', grayscale=False,confidence=0.9) is None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\UpgradeCannon.png', grayscale=False,confidence=0.9) is None:
                 print("Cannon Upgrade UI NOT found - opening now")
                 time.sleep(0.3)
                 click(434, 730)
                 time.sleep(0.2)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon010.png', grayscale=False, confidence=0.9) != None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canon010.png', grayscale=False, confidence=0.9) != None:
                 click(1561, 636)
                 canon010 = True
                 if canon010 == True:
                     print("Bomb Shooter upgraded to 0-1-0")
             time.sleep(0.2)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon020.png', grayscale=False, confidence=0.9) != None and canon010 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canon020.png', grayscale=False, confidence=0.9) != None and canon010 == True:
                 click(1561, 636)
                 canon020 = True
                 if canon020 == True:
@@ -310,28 +310,28 @@ def run():
 
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon030.png', grayscale=False, confidence=0.9) != None and canon020 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canon030.png', grayscale=False, confidence=0.9) != None and canon020 == True:
                 click(1561, 636)
                 canon030 = True
                 if canon030 == True:
                     print("Bomb Shooter upgraded to 0-3-0")
             time.sleep(0.3)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon130.png', grayscale=False, confidence=0.9) != None and canon030 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canon130.png', grayscale=False, confidence=0.9) != None and canon030 == True:
                 click(1498, 478)
                 canon130 = True
                 if canon130 == True:
                     print("Bomb Shooter upgraded to 1-3-0")
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon230.png', grayscale=False, confidence=0.9) != None and canon130 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canon230.png', grayscale=False, confidence=0.9) != None and canon130 == True:
                 click(1498, 478)
                 canon230 = True
                 if canon230 == True:
                     print("Bomb Shooter upgraded to 2-3-0")
             time.sleep(0.1)
 
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\canon240.png', grayscale=False, confidence=0.9) != None and canon230 == True:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\canon240.png', grayscale=False, confidence=0.9) != None and canon230 == True:
                 click(1561, 636)
                 canon240 = True
                 if canon240 == True:
@@ -357,7 +357,7 @@ def run():
         print("Waiting for Game to finish")
         while keyboard.is_pressed('ü') == False:
             # check if victory sign appears -> if it does, print and set game_finished to true
-            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\gamewon.png', grayscale=False, confidence=0.9) != None:
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\gamewon.png', grayscale=False, confidence=0.9) != None:
                 print("Game is won ... GG")
                 time.sleep(0.2)
                 print("Exiting Game")

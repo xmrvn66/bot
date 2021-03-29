@@ -14,7 +14,7 @@ def checkLvlUp():
     levelUp = False
     knowledgePoint = False
 
-    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\levelup.png', grayscale=False, confidence=0.9) != None:
+    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\levelup.png', grayscale=False, confidence=0.9) != None:
                 # check if level up occured
                 # click
                 print("Level UP detected")
@@ -22,7 +22,7 @@ def checkLvlUp():
                 levelUp = True
                 click(1145, 956)
                 time.sleep(0.7)
-    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\levelup_knowledgeicon.png', grayscale=False, confidence=0.9) != None and levelUp is True:
+    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\levelup_knowledgeicon.png', grayscale=False, confidence=0.9) != None and levelUp is True:
                 # check if knowledge point was gained
                 # click
                 print("Knowledge Point gained")

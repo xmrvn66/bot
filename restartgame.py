@@ -36,7 +36,7 @@ def navHome(game_won):
 
     while keyboard.is_pressed('ü') == False:
     # check if victory image appeared
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\gamewon.png', grayscale=False, confidence=0.9) != None and game_won is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\gamewon.png', grayscale=False, confidence=0.9) != None and game_won is True:
                 print("Victory Found")
                 time.sleep(0.35)
                 print("Clicking on Next")
@@ -46,7 +46,7 @@ def navHome(game_won):
                 time.sleep(0.35)
 
     # check for Freeplay Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\freeplaybutton.png', grayscale=False, confidence=0.9) != None and victoryClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\freeplaybutton.png', grayscale=False, confidence=0.9) != None and victoryClicked is True:
                 print("Freeplay Button Found")
                 time.sleep(0.35)
                 print("Clicking on Freeplay")
@@ -56,7 +56,7 @@ def navHome(game_won):
                 time.sleep(0.35)
 
                 # check for Okay Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\okaybutton.png', grayscale=False, confidence=0.9) != None and freeplayClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\okaybutton.png', grayscale=False, confidence=0.9) != None and freeplayClicked is True:
                 print("Okay Button Found")
                 time.sleep(0.35)
                 print("Clicking on Okay")
@@ -66,7 +66,7 @@ def navHome(game_won):
                 time.sleep(0.35)
 
                 # check for Settings Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\settings.png', grayscale=False, confidence=0.9) != None and okayClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\settings.png', grayscale=False, confidence=0.9) != None and okayClicked is True:
                 print("Settings Found")
                 time.sleep(0.35)
                 print("Opening Settings")
@@ -76,7 +76,7 @@ def navHome(game_won):
                 time.sleep(0.35)
 
                 # check for Restart Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\restartbutton.png', grayscale=False, confidence=0.9) != None and settingsClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\restartbutton.png', grayscale=False, confidence=0.9) != None and settingsClicked is True:
                 print("Restart Button Found")
                 time.sleep(0.35)
                 print("Restarting")
@@ -86,7 +86,7 @@ def navHome(game_won):
                 time.sleep(0.35)
 
                 # check for Restart Confirmation Button
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\confirmrestart.png', grayscale=False, confidence=0.9) != None and restartClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\confirmrestart.png', grayscale=False, confidence=0.9) != None and restartClicked is True:
                 print("Confirming ...")
                 time.sleep(0.35)
                 # click on RestartConfirmation

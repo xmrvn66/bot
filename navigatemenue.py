@@ -37,7 +37,7 @@ def navToMap():
 
     while keyboard.is_pressed('ü') == False:
     # check if play button appeared
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\playbutton_lobby_homescreen.png', grayscale=False, confidence=0.9) != None:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\playbutton_lobby_homescreen.png', grayscale=False, confidence=0.9) != None:
                 print("Play Button Found")
                 time.sleep(0.35)
                 print("Clicking on Play Button")
@@ -47,7 +47,7 @@ def navToMap():
                 time.sleep(0.5)
 
     # check for Monkey Madows Map
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\monkey_madows_selectscreen.png', grayscale=False, confidence=0.9) != None and playClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\monkey_madows_selectscreen.png', grayscale=False, confidence=0.9) != None and playClicked is True:
                 print("Monkey Madows Map Found")
                 time.sleep(0.35)
                 print("Choosing Map")
@@ -57,7 +57,7 @@ def navToMap():
                 time.sleep(0.3)
     
         # check for Difficulty
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\easydiff.png', grayscale=False, confidence=0.9) != None and mapClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\easydiff.png', grayscale=False, confidence=0.9) != None and mapClicked is True:
                 print("Difficulties Found")
                 time.sleep(0.35)
                 print("Selecting Easy Difficulty")
@@ -67,7 +67,7 @@ def navToMap():
                 time.sleep(0.3)
     
             # check for Gamemode
-        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\standard_gamemode.png', grayscale=False, confidence=0.9) != None and diffClicked is True:
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\standard_gamemode.png', grayscale=False, confidence=0.9) != None and diffClicked is True:
                 print("Gamemode Found")
                 time.sleep(0.35)
                 print("Selecting Standard Gamemode")
