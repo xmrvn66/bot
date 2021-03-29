@@ -6,6 +6,7 @@ import numpy as np
 import random
 import win32api
 import win32con
+from functions import *
 
 # Voraussetzungen: Home Screen | Full Sreeen 1920x1080
 
@@ -38,9 +39,8 @@ def navToMap():
     while keyboard.is_pressed('ü') == False:
     # check if play button appeared
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\playbutton_lobby_homescreen.png', grayscale=False, confidence=0.9) != None:
-                print("Play Button Found")
                 time.sleep(0.35)
-                print("Clicking on Play Button")
+                print("Clicking on Play")
                 # click on "Play Button"
                 click(827, 927)
                 playClicked = True
@@ -48,7 +48,6 @@ def navToMap():
 
     # check for Monkey Madows Map
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\monkey_madows_selectscreen.png', grayscale=False, confidence=0.9) != None and playClicked is True:
-                print("Monkey Madows Map Found")
                 time.sleep(0.35)
                 print("Choosing Map")
                 # click on Monkey Madows Map
@@ -58,7 +57,6 @@ def navToMap():
     
         # check for Difficulty
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\easydiff.png', grayscale=False, confidence=0.9) != None and mapClicked is True:
-                print("Difficulties Found")
                 time.sleep(0.35)
                 print("Selecting Easy Difficulty")
                 # click on Monkey Madows Map
@@ -68,7 +66,6 @@ def navToMap():
     
             # check for Gamemode
         if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\standard_gamemode.png', grayscale=False, confidence=0.9) != None and diffClicked is True:
-                print("Gamemode Found")
                 time.sleep(0.35)
                 print("Selecting Standard Gamemode")
                 # click on Monkey Madows Map

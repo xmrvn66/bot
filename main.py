@@ -6,6 +6,7 @@ from restartgame import navHome
 from navigatemenue import navToMap
 import time
 import keyboard
+import functions
 
 # Welcome message
 print("Open up the Game with the following settings:")
@@ -15,12 +16,7 @@ print("To stop the bot hold 'Ü'- DON'T MOVE YOUR Mouse")
 print("Keep in Foreground")
 
 # Delay, damit man in das Game tabben kann
-print("Bot is starting in 3")
-time.sleep(1)
-print("Bot is starting in 2")
-time.sleep(1)
-print("Bot is starting in 1")
-time.sleep(1)
+functions.countDown(3, msg="Bot is starting in: ")
 
 # Navigate to Map
 print("Navigating to Map")

@@ -8,19 +8,11 @@ import win32api
 import win32con
 from levelup import checkLvlUp
 from checkMap import checkForMap
+from functions import *
 
 def run():
     """ Skript, welches Spiel spielt."""
-
-        # Click Function -> Kann dann immer gecalled werden, wenn man irgendwo clicken will
-    def click(x, y):
-        win32api.SetCursorPos((x, y))  # set cursor position
-        # warte zufällig zwischen 0.1s und 0.3s (sonst kommt Spiel nicht klar)
-        time.sleep(np.random.uniform(0.1,0.3))
-        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)  # push left click
-        time.sleep(np.random.uniform(0.1,0.3))  # hold button for 0.1 - 0.3s 
-        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0, 0)  # release left click
-
+    
     # check if Map is loaded
     mapLoaded = checkForMap()
     
@@ -50,10 +42,8 @@ def run():
         # wait before next acion
         time.sleep(0.7)
 
-        # click to start game + fast forward
-        click(1827, 999)
-        time.sleep(0.1)
-        click(1827, 999)
+        # start game and fast forward
+        startgame()
 
         # wait before next acion
         time.sleep(0.3)

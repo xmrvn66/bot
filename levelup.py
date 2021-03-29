@@ -6,6 +6,7 @@ import numpy as np
 import random
 import win32api
 import win32con
+from functions import *
 
 def checkLvlUp():
     """Checking for Level Up and Knowledge Point"""
@@ -28,12 +29,8 @@ def checkLvlUp():
                 print("Knowledge Point gained")
                 time.sleep(0.2)
                 click(1145, 956)
-                print("Continuing in 3")
-                time.sleep(1)
-                print("Continuing in 2")
-                time.sleep(1)
-                print("Continuing in 1")
-                knowledgePoint = True
+                countDown(3, msg="Resuming in: ")
+
     if knowledgePoint and levelUp is True:
                 # Start Game and fast forward
                 print("Starting Game")
