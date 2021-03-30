@@ -324,6 +324,7 @@ def run():
     if canon240 == True:
         print("Waiting for Game to finish")
         while keyboard.is_pressed('ü') == False:
+            checkLvlUp()
             # check if victory sign appears -> if it does, print and set game_finished to true
             if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\gamewon.png', grayscale=False, confidence=0.9) != None:
                 print("Game is won ... GG")
