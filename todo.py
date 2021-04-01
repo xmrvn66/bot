@@ -8,6 +8,8 @@ Not done Tasks:
     # https://stackoverflow.com/questions/51825908/game-counter-in-python
     # if game window with title "Bloons TD6" is not in Foreground, stop bot
     # create functions for placing and upgrading Units -> place() -> upgradeUnit()
+    # click on image center if found -> x, y = pyautogui.locateCenterOnScreen('neverbtn.png')
+                                    #   pyautogui.click(x, y)
 
 
 
