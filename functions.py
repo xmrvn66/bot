@@ -6,7 +6,7 @@ import numpy as np
 import random
 import win32api
 import win32con
-from levelup import checkLvlUp
+#from levelup import checkLvlUp
 
 # Click Function -> Kann dann immer gecalled werden, wenn man irgendwo clicken will
 def click(x, y):
@@ -42,6 +42,36 @@ def countDown(t=3, msg="Bot is starting in: "):
       print(msg + str(t))
       time.sleep(1)
       t -= 1
+
+def checkLvlUp():
+    """Checking for Level Up and Knowledge Point"""
+
+    # print("Checking for LevelUP")
+    levelUp = False
+    knowledgePoint = False
+
+    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\levelup.png', grayscale=False, confidence=0.9) != None:
+                # check if level up occured
+                # click
+                print("Level UP detected")
+                time.sleep(0.2)
+                levelUp = True
+                click(1145, 956)
+                time.sleep(0.7)
+    if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\levelup_knowledgeicon.png', grayscale=False, confidence=0.9) != None and levelUp is True:
+                # check if knowledge point was gained
+                # click
+                print("Knowledge Point gained")
+                time.sleep(0.2)
+                click(1145, 956)
+                countDown(3, msg="Resuming in: ")
+
+    if knowledgePoint and levelUp is True:
+                # Start Game and fast forward
+                print("Starting Game")
+                click(1827, 999)
+                time.sleep(0.1)
+                click(1827, 999)
 
 # Check if Unit is available for purchase
 def checkAvailability(unitName: str, pngFile: str, special_key: str = 'ü') -> bool:
@@ -80,7 +110,7 @@ def wait_for_game_finished(game_finished:bool = False):
                 break
             time.sleep(1)
     
-    return game_finished
+        return game_finished
 
 class Unit: 
 
