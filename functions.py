@@ -6,6 +6,7 @@ import numpy as np
 import random
 import win32api
 import win32con
+from levelup import checkLvlUp
 
 # Click Function -> Kann dann immer gecalled werden, wenn man irgendwo clicken will
 def click(x, y):
@@ -65,4 +66,92 @@ def checkAvailability(unitName: str, pngFile: str, special_key: str = 'ü') -> b
         print(f"Bot is stopping - Keep holding {special_key}")
 
     return unitAvail
+
+def wait_for_game_finished(game_finished:bool = False):
+        print("Waiting for Game to finish")
+        while keyboard.is_pressed('ü') == False:
+            checkLvlUp()
+            # check if victory sign appears -> if it does, print and set game_finished to true
+            if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Bot\resource\gamewon.png', grayscale=False, confidence=0.9) != None:
+                print("Game is won ... GG")
+                time.sleep(0.2)
+                print("Exiting Game")
+                game_finished = True
+                break
+            time.sleep(1)
+    
+    return game_finished
+
+class Unit: 
+
+    """build constructor """
+
+    def __init__(self, name:str, x:int, y:int, shortcut:str, state=[0,0, 0], endstate=[0, 0, 0]):  
+ 
+        self.name = name           # Unit Name
+        self.state = state            
+        self.x = x                 # x Pixel
+        self.y = y                 # y Pixel
+        self.shortcut = shortcut   # shortcut used to select Unit
+        self.endstate = endstate
+    
+    def check_for_interface(self):
+        # locate UI if not found
+        checkLvlUp()
+        if pyautogui.locateOnScreen(r'C:\Users\Marvin\Documents\dev\Uebungen\resource\interfaceUp.png', grayscale=False,confidence=0.7) is None:
+            print(f"{self.name} Upgrade UI NOT found - opening now")
+            time.sleep(np.random.uniform(0.4,0.6))
+            click(self.x, self.y)
+            time.sleep(np.random.uniform(0.5,1))
+
+    def placeUnit(self):                                # placeUnit function
+        """
+        Places Unit at location x, y  \n
+        unitName = "Sniper" : Name of Unit - used by print function \n
+        shortcut = "Z" : Shortcut used to select Unit ingame
+        """
+        print(f'Placing {self.name}')
+        pyautogui.keyDown(self.shortcut)
+        time.sleep(np.random.uniform(0.1,0.2))
+        pyautogui.keyUp(self.shortcut)
+        time.sleep(np.random.uniform(0.1,0.2))
+        click(self.x, self.y)
+        time.sleep(np.random.uniform(0.1,0.2))
+        print(f'Pressing {self.shortcut} to place {self.name}')
+        print(f'My position is {self.x}, {self.y}')
+
+    def _upgrade_fully(self):
+        
+        while keyboard.is_pressed('ü') is False:
+            self.check_for_interface()
+            checkLvlUp()
+            if self.state[0] < self.endstate[0] and pyautogui.locateOnScreen(r"C:\Users\Marvin\Documents\dev\Uebungen\resource\upgradeAvail.png", region=(1448, 416, 171, 128), grayscale=False, confidence=0.7) != None:
+                click(1543, 482) 
+                time.sleep(np.random.uniform(1,1.3))
+                self.state[0] += 1
+                print(f"{self.name} upgraded to {self.state[0]}-{self.state[1]}-{self.state[2]}")     
+            if self.state[0] == self.endstate[0]:
+                break    
+
+        while keyboard.is_pressed('ü') is False:
+            self.check_for_interface()
+            checkLvlUp()
+            if self.state[1] < self.endstate[1] and pyautogui.locateOnScreen(r"C:\Users\Marvin\Documents\dev\Uebungen\resource\upgradeAvail.png", region=(1448, 574, 171, 128), grayscale=False, confidence=0.7) != None:
+                click(1543, 628) 
+                time.sleep(np.random.uniform(1,1.3))
+                self.state[1] += 1
+                print(f"{self.name} upgraded to {self.state[0]}-{self.state[1]}-{self.state[2]}")     
+            if self.state[1] == self.endstate[1]:
+                break
+        
+        while keyboard.is_pressed('ü') is False:
+            self.check_for_interface()
+            checkLvlUp()
+            if self.state[2] < self.endstate[2] and pyautogui.locateOnScreen(r"C:\Users\Marvin\Documents\dev\Uebungen\resource\upgradeAvail.png", region=(1448, 574, 171, 128), grayscale=False, confidence=0.7) != None:
+                click(1543, 777) 
+                time.sleep(np.random.uniform(1,1.3))
+                self.state[2] += 1
+                print(f"{self.name} upgraded to {self.state[0]}-{self.state[1]}-{self.state[2]}")     
+            if self.state[2] == self.endstate[2]:
+                break
 
